@@ -10,12 +10,12 @@ By the end of the lab, all tests in the report should be passing.
 */
 
 const studentInformation = {
-  name: "FILL_IN_YOUR_NAME_HERE",
-  grade: "FILL_IN_YOUR_GRADE_HERE",
-  advisor: "FILL_IN_YOUR_ADVISOR_HERE",
-  major: "FILL_IN_YOUR_MAJOR_HERE",
-  graduationYear: "FILL_IN_YOUR_GRADUATION_YEAR_HERE",
-  imageUrl: "ADD_A_URL_TO_ANY_IMAGE_HERE",
+  name: "Sophia Baig",
+  grade: "Rising Junior",
+  advisor: "Anthony Nguyen",
+  major: "Computer Science",
+  graduationYear: "2024",
+  imageUrl: "ProfilePicture.jpeg",
 }
 
 let semester = "Spring Semester"
@@ -60,6 +60,19 @@ const gpaPointsLookup = {
  */
 const dropdownEl = document.querySelector(".dropdown")
 // ADD more query selectors here
+const name = document.querySelector("#student-name")
+const advisor = document.querySelector("#student-advisor")
+const major = document.querySelector("#student-major")
+const grade = document.querySelector("#student-grade-level")
+const year = document.querySelector("#student-graduation-year")
+const image = document.querySelector("#student-image")
+const semDropdown = document.querySelector(".semester-dropdown")
+const semDropdownButton = document.querySelector(".dropdown-button")
+const semDropdownLabel = document.querySelector(".dropdown-label")
+const fallSem = document.querySelector("#fall-semester")
+const springSem = document.querySelector("#spring-semester")
+const winterTerm = document.querySelector("#winter-term")
+const reportCard = document.querySelector("#report-card-table")
 
 /**
  * SOLUTIONS FOR STUDENT INFO DOM UPDATES
