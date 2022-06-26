@@ -38,7 +38,7 @@ const studentData = {
     { code: "GEN ED", name: "General Education Requirement", semester: "Winter 2020", credits: 5, grade: "A+" },
   ],
 }
-
+ 
 const gpaPointsLookup = {
   "A+": 4.0,
   A: 4.0,
@@ -60,7 +60,7 @@ const gpaPointsLookup = {
  */
 const dropdownEl = document.querySelector(".dropdown")
 // ADD more query selectors here
-const name = document.querySelector("#student-name")
+const nameElement = document.querySelector("#student-name")
 const advisor = document.querySelector("#student-advisor")
 const major = document.querySelector("#student-major")
 const grade = document.querySelector("#student-grade-level")
@@ -84,7 +84,7 @@ const reportCard = document.querySelector("#report-card-table")
  * @param {String} studentName - the name of the student
  */
 function updateStudentName(studentName) {
-  // code goes here
+  nameElement.innerHTML = studentName
 }
 
 /**
@@ -93,7 +93,7 @@ function updateStudentName(studentName) {
  * @param {String|Number} studentGradeLevel - the grade level of the student
  */
 function updateStudentGradeLevel(studentGradeLevel) {
-  // code goes here
+  grade.innerHTML = studentGradeLevel
 }
 
 /**
@@ -102,7 +102,7 @@ function updateStudentGradeLevel(studentGradeLevel) {
  * @param {String} studentAdvisor - the advisor of the student
  */
 function updateStudentAdvisor(studentAdvisor) {
-  // code goes here
+  advisor.innerHTML = studentAdvisor
 }
 
 /**
@@ -111,7 +111,7 @@ function updateStudentAdvisor(studentAdvisor) {
  * @param {String} studentMajor - the major of the student
  */
 function updateMajor(studentMajor) {
-  // code goes here
+  major.innerHTML = studentMajor
 }
 
 /**
@@ -120,7 +120,7 @@ function updateMajor(studentMajor) {
  * @param {Number} graduationyear - the year the student graduates
  */
 function updateStudentGraduationYear(graduationYear) {
-  // code goes here
+  year.innerHTML = graduationYear
 }
 
 /**
@@ -130,7 +130,7 @@ function updateStudentGraduationYear(graduationYear) {
  * @param {String} url - a link to an image
  */
 function updateStudentImage(imageUrl) {
-  // code goes here
+  image.src = imageUrl
 }
 
 /**
@@ -284,4 +284,5 @@ function calculateSemesterGpa(reportCardTableElement) {
 
 window.onload = function () {
   // execute your functions here to make sure they run as soon as the page loads
+  populateStudentInfo(studentInformation)
 }
