@@ -215,7 +215,7 @@ function updateReportCard(reportCardTableElement, currentSemester) {
 
   // add your code here
   addReportCardHeaders(reportCardTableElement)
-  studentData[currentSemester].forEach((course, index) => addCourseRowToReportCard(reportCardTableElement, course, index))
+  studentData[currentSemester].forEach((course,index) => addCourseRowToReportCard(reportCardTableElement, course, index))
 }
 
 /**
