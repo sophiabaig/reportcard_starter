@@ -155,13 +155,13 @@ function populateStudentInfo(studentInformationObject) {
 function addReportCardHeaders(reportCardTableElement) {
   // update the code here
   reportCardTableElement.innerHTML += `
-  <div class = "table-header">
+  <div class = "table-row table-header">
   <h4 class = code-col>Code</h4>
   <h4 class = name-col>Name</h4>
   <h4 class = sem-col>Semester</h4>
   <h4 class = cred-col>Credits</h4>
-  <h4 class = let-col>Letter</h4>
-  <h4 class = points-col>Points</h4>
+  <h4 class = lett-col>Letter</h4>
+  <h4 class = pts-col>Points</h4>
   </div>`
 }
 
@@ -172,17 +172,18 @@ function addReportCardHeaders(reportCardTableElement) {
  * @param {Object} course
  * @param {Number} rowNum
  */
+
 function addCourseRowToReportCard(reportCardTableElement, course, rowNum) {
   // update the code here with information about the course passed to this function
   reportCardTableElement.innerHTML += `
-  <div class="table-row course-row row-${rowNum + 1} ${rowNum % 2 === 1 ? "odd" : "even"}">
-  <h4 class = code-col>${course.code}</h4>
-  <h4 class = name-col>${course.name}</h4>
-  <h4 class = sem-col>${course.semester}</h4>
-  <h4 class = cred-col>${course.credits}</h4>
-  <h4 class = let-col>${course.grade}</h4>
-  </div>
-  `
+    <div class="table-row course-row row-${rowNum + 1} ${rowNum % 2 === 1 ? "odd" : "even"}">
+    <h4 class = code-col>${course.code}</h4>
+    <h4 class = name-col>${course.name}</h4>
+    <h4 class = sem-col>${course.semester}</h4>
+    <h4 class = cred-col>${course.credits} credits</h4>
+    <h4 class = lett-col>${course.grade}</h4>
+    </div>
+    `
 }
 
 /**
@@ -213,7 +214,7 @@ function updateReportCard(reportCardTableElement, currentSemester) {
 
   // add your code here
   addReportCardHeaders(reportCardTableElement)
-  addCourseRowToReportCard(reportCardTableElement, studentData[currentSemester], 0)
+  studentData[currentSemester].forEach((course, index) => addCourseRowToReportCard(reportCardTableElement, course, index))
 }
 
 /**
